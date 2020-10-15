@@ -1,69 +1,86 @@
 'use strict';
 
-//Task 1
-//User inputs a number. Check the number and write a message if it's odd or even.
-let number = prompt('input number');
-number = parseInt(number);
-if (number % 2 == 0) {
-  console.log('The number is even');
-} else {
-  console.log('The number is odd');
+// Task 1
+// Write a function pow(x, n) that returns x in power n.
+// Create 2 solutions:
+// with operator **
+// with loop
+function calcPow(x, n) {
+  return x ** n;
 }
+
+console.log(calcPow(2, 3));
+
+function calcPowLoop(x, n) {
+  let result = x;
+  for (let i = 1; i < n; i++){
+      result *= x;
+  }
+  return result;
+}
+
+console.log(calcPowLoop(2, 4));
 
 
 // Task 2
-// Check the range outside
-// Write an if condition to check that age is NOT between 14 and 90 inclusively.
-// Create two variants: the first one using NOT !, the second one – without it
-let age = +prompt('input age');
-age = parseInt(age);
-if (!(age >= 14 && age <= 90)) {
-  console.log('not in');
-} else {
-  console.log('in');
+// Write a function min(a, b) which returns the least of two numbers a and b.
+function getMin(a, b) {
+  return Math.min(a, b);
 }
-
-let age = +prompt('input age');
-age = parseInt(age);
-if (age < 14 || age > 90) {
-  console.log('not in');
-} else {
-  console.log('in');
-}
+console.log(getMin(-6, 3));
 
 
-//Task 3
-//Write to console number sequence (console.log) 0 2 4 6 8 10:
-for (let i = 0; i <= 10; i += 2) {
-  console.log(i);
-}
+// Task 3
+// Write a function max(a, b) which returns the greater of two numbers a and b.
+let getMax = (a, b) => a > b ? a : b;
+console.log(getMax(14, 6));
 
 
 // Task 4
-// Write to console number sequence (console.log): 1 3 5 7 9
-for (let i = 0; i < 10; i++) {
-  if (i % 2 == 0) continue;
-  console.log(i);
+// Rewrite with arrow functions
+// https://javascript.info/task/rewrite-arrow
+function ask(question, yes, no) {
+  if (confirm(question)) yes()
+  else no();
 }
 
+ask(
+  'Do you agree?',
+  () => alert('You agreed.'),
+  () => alert('You canceled the execution.')
+);
 
-//Task 5
-//Write a user login application.
-//Information about task is here: https://javascript.info/task/check-login
-const user = 'Admin';
-const pass = 'TheMaster';
-let username = prompt('Who\'s there?:');
-if (username === user ) {
-  let pwd = prompt('Password?:');
-  if (pwd === pass ) {
-    alert('Welcome!');
-  } else if (pwd) {
-    alert('Wrong password');
-  } else {
-    alert('Canceled');
-  }
-} else if (username) {
-  alert('I don\'t know you');
-} else {
-  alert('Canceled!');
+
+// Task 5
+// Write a function log(message, logger)
+// Parameter logger should have default value console.log
+function log (message, logger = console.log) {
+ logger(message);
 }
+
+log('panic');
+
+//OR
+
+function logCallback(message, logger = console.log) {
+  logger(message);
+}
+
+function logConsoleWarn(message) {
+  console.warn(message);
+}
+
+function logConsoleError(message) {
+  console.error(message);
+}
+function logAlert(message) {
+  alert(message);
+}
+
+logCallback('Hello', logAlert);
+
+// Task 6
+// Rewrite function showMessage to the self-calling:
+(function showMessage(message) {
+  console.log(message);
+}('test self-func'));
