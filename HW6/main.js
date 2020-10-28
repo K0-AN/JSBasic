@@ -33,7 +33,7 @@ Add object method sayHi. This method should log to console phrase 'Hello, from X
 */
 let user = {};
 console.log(user);
-user = { name: 'John' };
+user.name = 'John';
 console.log(user);
 user['surname'] = 'Smith';
 console.log(user);
@@ -77,7 +77,7 @@ Check for emptiness
 P.S. you can go through object with for...in or use Object.keys()
 */
 function isEmpty(obj) {
-  let isEmpty;
+  
   if (!Object.keys(obj).length) {
     return true;
   } else {
