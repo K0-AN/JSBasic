@@ -52,7 +52,7 @@ user2.age = 40;
 user2.sayHi = function () { console.log(`Hi from ${this.name}`);}
 user2.sayHi();
 
-let userAges = [user, user2].map(item => it.age);
+let userAges = [user, user2].map(item => item.age);
 
 /*
 let userAges = [user.age, user2.age]; такий код теж працює чи є сенс в map взагалі??
