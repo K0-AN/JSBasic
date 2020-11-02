@@ -8,13 +8,18 @@ for (let i = 0; i < children.length; i++) {
   } else {
     children[i].classList.add('grid-item-background');
   }
-  
+
 }
 
 let alert = prompt('Enter text here:');
 
-let text = document.getElementsByClassName('text-placeholder')[0];
-text.innerText = alert;
-if (alert.indexOf('1') != -1) {
-  text.classList.add('numeric');
+let text = document.getElementsByClassName('text-placeholder');
+for (let i = 0; i < text.length; i++) {
+  text[i].innerText = alert;
+  if (alert.indexOf('1') != -1) {
+    text[i].classList.add('numeric');
+  }
 }
+
+
+
