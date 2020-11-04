@@ -9,28 +9,6 @@ let todos = [
 ];
 
 
-function deleteTodo(id) {
-  for (let i = 0; i < todos.length; i++) {
-    if (todos[i].id == id) {
-      todos.splice(i, 1);
-    }
-  }
-}
-
-//deleteTodo(548);
-//console.log(todos);
-
-
-function setTodoState(id, state) {
-  for (let i = 0; i < todos.length; i++) {
-    if (todos[i].id == id) {
-      todos[i].completed = state;
-    }
-  }
-}
-
-//setTodoState(2, false);
-//console.log(todos);
 const body = document.body;
 
 for (let i = 0; i < todos.length; i++) {
