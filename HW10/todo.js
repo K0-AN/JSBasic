@@ -74,7 +74,7 @@ todosContainer.addEventListener('click', (event) => {
 
   } else if(target.classList.contains('state-icon')){
     
-     //setTodoState(target.closest('.todo').id, false);
+     setTodoState(target.closest('.todo').id, false);
      
      fillTodos();
   }
@@ -82,7 +82,7 @@ todosContainer.addEventListener('click', (event) => {
 })
 
 function setTodoState(id, state) {
-//  for (let i=0; i<todos.length; i++) {
+ //  for (let i=0; i<todos.length; i++) {
 //    if (todos[i].id == id) {
 //      todos[i].completed = state;
 //    }
@@ -93,7 +93,6 @@ console.log(itemId);
     
 }
 setTodoState (4, false);
-
 
 
 document.getElementById('loadTodos')
